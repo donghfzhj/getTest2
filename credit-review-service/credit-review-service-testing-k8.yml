@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mall
+    username: mall
+    password: mall
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: credit-report
+
+logging:
+  path: ${jingyong.common.working-home}/${spring.application.name}/
+
+server:
+  tomcat:
+    basedir: ${jingyong.common.working-home}/${spring.application.name}/
+
+jingyong:
+  common:
+    working-home: /data/mall
+  credit:
+    drl:
+      home-folder: ${jingyong.common.working-home}/
+    etl:
+      root-folder: ${jingyong.common.working-home}/groovy-script
+    fake-rule-approved: false
+    jump-rule-check: false
+    call-zixin: true
+    fake-available-value: 15000
+    period:
+      credit: 90
+      lift: 30
+      frozen: 15
+    age:
+      min: 21
+      max: 40

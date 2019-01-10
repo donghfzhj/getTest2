@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+logging:
+  path: ${jingyong.common.working-home}/${spring.application.name}/
+
+server:
+  tomcat:
+    basedir: ${jingyong.common.working-home}/${spring.application.name}/
+
+jingyong:
+  common:
+    working-home: /home/mall
+  credit:
+    drl:
+      home-folder: D:/sts/Credit/credit-review-service/src/main/resources/
+    etl:
+      root-folder: D:/groovy
+    fake-rule-approved: false
+    jump-rule-check: false
+    call-zixin: true

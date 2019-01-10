@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${jingyong.cloud.server}:5432/mall
+    username: mall
+    password: D8#jinGyonG$2018!
+  data:
+    mongodb:
+      uri: mongodb://mall:D8#jinGyonG$2018!@${jingyong.cloud.server:localhost}:27017/mall?authSource=admin
+  rabbitmq:
+    host: ${jingyong.cloud.server:localhost}
+    username: mall
+    password: mall
+
+logging:
+  path: ${jingyong.common.working-home}/${spring.application.name}/
+
+server:
+  undertow:
+    accesslog:
+      enabled: true
+      pattern: '%t %a "%r" %s (%D ms)'
+      prefix: access.
+      dir: ${jingyong.common.working-home}/${spring.application.name}/
+  tomcat:
+    basedir: ${jingyong.common.working-home}/${spring.application.name}/
+
+jingyong:
+  cloud:
+    server: 172.31.181.3
+  common:
+    working-home: /home/mall
+  credit:
+    drl:
+      home-folder: ${jingyong.common.working-home}/
+    etl:
+      root-folder: ${jingyong.common.working-home}/groovy-script
+    fake-rule-approved: false
+    jump-rule-check: false
+    call-zixin: true
+    fake-available-value: 15000
+    period:
+      credit: 90
+      lift: 30
+      frozen: 15
+    age:
+      min: 21
+      max: 40
