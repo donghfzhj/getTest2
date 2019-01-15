@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://10.25.110.88:5432/mall8
+    url: jdbc:postgresql://10.25.110.88:5432/mall9
     username: mall
     password: hill
   data:
